@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Faker\Provider\Lorem;
@@ -28,6 +29,9 @@ Route:: get('/posts/{post}', function(Post $post){
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
 
-Route:: get('/authors/{user}', function(User $user){
-    return view('posts', ['title' => 'Articles by' . $user->name, 'posts' => $user->posts]);
+Route:: get('/authors/{user:username}', function(User $user){
+    return view('posts', ['title' => count($user->posts) . 'Articles by' . $user->name, 'posts' => $user->posts]);
+});
+Route:: get('/categories/{category:id}', function(Category $category){
+    return view('posts', ['title' => 'Articles in ' . $category->name, 'posts' => $category->posts]);
 });
