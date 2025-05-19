@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('color');
             $table->timestamps();
         });
-    }
+    } // ← Ini yang tadinya hilang, penutup function up()
 
     /**
      * Reverse the migrations.

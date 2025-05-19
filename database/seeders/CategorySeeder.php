@@ -15,13 +15,20 @@ class CategorySeeder extends Seeder
     {
         // Category::factory(3)->create();
         Category::create([
-            'name'=>'UI-UX'
+            'name'=>'UI-UX',
+            'color'=>'blue'
         ]);
         Category::create([
-            'name'=>'Machine Learning'
+            'name'=>'Machine Learning',
+            'color'=>'green'
         ]);
         Category::create([
-            'name'=>'Web Design'
+            'name'=>'Web Design',
+            'color'=>'red'
+        ]);
+         Category::create([
+            'name'=>'Data Wharehouse',
+            'color'=>'yellow'
         ]);
     }
 }
